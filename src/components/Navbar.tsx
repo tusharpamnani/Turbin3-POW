@@ -1,20 +1,18 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import DarkModeToggle from "@/components/DarkModeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/journey", label: "Cohort Journey" },
   { href: "/learnings", label: "Learnings" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   return (
     <nav className="w-full border-b border-gray-200 dark:border-gray-800 bg-background/80 backdrop-blur sticky top-0 z-30">
-      <div className="max-w-4xl mx-auto flex items-center justify-between px-4 py-3">
+      <div className="max-w-4xl mx-auto flex items-center justify-between py-3">
         {/* Site Title/Logo (edit here) */}
         <Link href="/" className="text-lg font-bold tracking-tight text-foreground hover:opacity-80 transition">
           Tushar Pamnani
@@ -35,10 +33,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-        </div>
-        {/* Dark Mode Toggle */}
-        <div className="ml-4">
-          <DarkModeToggle />
         </div>
       </div>
     </nav>
